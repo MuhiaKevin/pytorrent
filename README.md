@@ -28,7 +28,7 @@ Don't hesitate to ask me questions if you need help, or send me a pull request f
 ### Installation
 You can run the following command to install the dependencies using pip
 
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
 :boom: Because it's using the "select" function, this code will not be able to run on Windows: [python-select-on-windows](https://stackoverflow.com/a/22254123/3170071)
 
@@ -38,7 +38,7 @@ If you want to specify a torrent file, you need to edit it manually in the run.p
 self.torrent = Torrent.Torrent("path_to_your_torrent") 
 ```
 Then simply run:
-`python main.py`
+`python3 main.py`
 
 The files will be downloaded in the same path as your run.py script.
 
