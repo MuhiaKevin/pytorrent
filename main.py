@@ -8,6 +8,7 @@ import pieces_manager
 import torrent
 import tracker
 import logging
+import sys
 import os
 import message
 
@@ -15,8 +16,13 @@ import message
 class Run(object):
     percentage_completed = -1
 
-    def __init__(self):
-        self.torrent = torrent.Torrent().load_from_path("torrent.torrent")
+    def __init__(self):        
+        if len(sys.argv) <= 2 and len(sys.argv) > 1 :
+            self.torrent = torrent.Torrent().load_from_path(sys.argv[1])
+        else:
+            print("Usage : python3 main.py <path_to_torrent_file> \n")
+            sys.exit(1)
+        
         self.tracker = tracker.Tracker(self.torrent)
 
         self.pieces_manager = pieces_manager.PiecesManager(self.torrent)
